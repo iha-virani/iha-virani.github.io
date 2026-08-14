@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iha Virani — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF9F5;
+    --ink:#1C1E1B;
+    --ink-soft:#5B5D57;
+    --line:#DEDCD3;
+    --accent:#5F6F52;
+    --accent-soft:#EDEFE7;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Newsreader', Georgia, serif;
+    font-size:18px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.02em;
+  }
+
+  a{ color:inherit; }
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  header{
+    padding:120px 0 80px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .eyebrow{
+    font-size:13px;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .eyebrow::before{
+    content:"";
+    width:7px;
+    height:7px;
+    background:var(--accent);
+    border-radius:50%;
+    display:inline-block;
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes pulse{
+    0%,100%{ opacity:1; }
+    50%{ opacity:.35; }
+  }
+
+  h1{
+    font-size:clamp(38px, 7vw, 58px);
+    font-weight:500;
+    margin:0 0 20px;
+    letter-spacing:-0.01em;
+  }
+
+  header p.lede{
+    font-size:20px;
+    color:var(--ink-soft);
+    max-width:520px;
+    margin:0 0 32px;
+  }
+
+  .links{
+    display:flex;
+    gap:24px;
+    font-size:14px;
+  }
+
+  .links a{
+    text-decoration:none;
+    border-bottom:1px solid var(--ink);
+    padding-bottom:2px;
+    transition:opacity .2s ease;
+  }
+
+  .links a:hover{ opacity:.6; }
+
+  section{
+    padding:64px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  section:last-of-type{ border-bottom:none; }
+
+  h2{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--ink-soft);
+    margin:0 0 32px;
+  }
+
+  #about p{
+    font-size:19px;
+    max-width:600px;
+  }
+
+  .entry{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:24px;
+    padding:28px 0;
+    border-top:1px solid var(--line);
+  }
+
+  .entry:first-of-type{ border-top:none; }
+
+  .entry time{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    padding-top:4px;
+  }
+
+  .entry h3{
+    font-size:22px;
+    font-weight:500;
+    margin:0 0 8px;
+  }
+
+  .entry p{
+    margin:0 0 12px;
+    color:var(--ink-soft);
+    font-size:16px;
+  }
+
+  .entry .tags{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--accent);
+  }
+
+  .entry a.proj-link{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    text-decoration:none;
+    border-bottom:1px solid var(--accent);
+    color:var(--accent);
+  }
+
+  .skill-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .skill-grid span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    background:var(--accent-soft);
+    color:var(--accent);
+    padding:6px 12px;
+    border-radius:3px;
+  }
+
+  #contact h2{ margin-bottom:20px; }
+
+  #contact p{
+    font-size:19px;
+    max-width:520px;
+    margin:0 0 28px;
+  }
+
+  .contact-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .contact-list a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:15px;
+    text-decoration:none;
+    width:fit-content;
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease;
+  }
+
+  .contact-list a:hover{ border-color:var(--ink); }
+
+  footer{
+    padding:40px 0 60px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+
+  @media (max-width:600px){
+    header{ padding:80px 0 56px; }
+    .entry{ grid-template-columns:1fr; gap:8px; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ animation:none !important; transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow mono">Available for work</p>
+    <h1>Iha Virani</h1>
+    <p class="lede">I build things for the web. This is a running record of what I've made and what I'm learning.</p>
+    <nav class="links">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      A short paragraph about you goes here. Talk about what you study or do,
+      what kind of problems you like solving, and what you're currently learning
+      or working toward.
+    </p>
+  </section>
+
+  <section id="work">
+    <h2>Selected work</h2>
+
+    <div class="entry">
+      <time class="mono">2026</time>
+      <div>
+        <h3>Project name</h3>
+        <p>One or two lines on what this project does and the problem it solves.</p>
+        <p class="tags">React · Node · PostgreSQL</p>
+        <a class="proj-link" href="#">View project →</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <time class="mono">2025</time>
+      <div>
+        <h3>Project name</h3>
+        <p>One or two lines on what this project does and the problem it solves.</p>
+        <p class="tags">Python · Flask</p>
+        <a class="proj-link" href="#">View project →</a>
+      </div>
+    </div>
+
+    <div class="entry">
+      <time class="mono">2025</time>
+      <div>
+        <h3>Project name</h3>
+        <p>One or two lines on what this project does and the problem it solves.</p>
+        <p class="tags">HTML · CSS · JavaScript</p>
+        <a class="proj-link" href="#">View project →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-grid">
+      <span>JavaScript</span>
+      <span>Python</span>
+      <span>React</span>
+      <span>HTML/CSS</span>
+      <span>Git</span>
+      <span>SQL</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Have a project in mind or just want to say hi? Reach out — I'm always happy to talk.</p>
+    <div class="contact-list">
+      <a href="mailto:you@example.com">you@example.com</a>
+      <a href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener">linkedin.com/in/yourhandle</a>
+      <a href="https://github.com/iha-virani" target="_blank" rel="noopener">github.com/iha-virani</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Iha Virani — built with plain HTML &amp; CSS.
+  </footer>
+
+</div>
+
+</body>
+</html>
